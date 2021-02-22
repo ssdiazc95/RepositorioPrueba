@@ -1,0 +1,102 @@
+
+.container{
+    margin-top: 150px;
+    text-align: center;
+    width: 70%;
+    height: 100%;
+}
+#form-add {
+    border-radius: 10px;
+    box-shadow: 0.5px 0.5px 1px 1px #e4e2df;
+}
+
+#title {
+    text-transform: uppercase;
+    font-weight: bolder;
+    color: #003970;
+    font-size: 20pt;
+    padding: 10px;
+}
+
+.long-col {
+    display: flex;
+    flex-direction: column;
+    margin:1rem auto;
+    /* max-width: 600px; */
+}
+ #long-field {
+     width: 500px;
+ }
+
+
+.mat-form-field-underline {
+    background-color: #003970 !important;
+    width: 500px;
+}
+
+.mat-form-field-ripple,
+.mat-calendar-body-selected {
+    background-color: #003970 !important;
+}
+
+.mat-form-field-label,
+.mat-primary .mat-option.mat-selected,
+.mat-select-arrow {
+    color: #003970 !important;
+}
+
+
+.form-row {
+    min-width: 150px;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-row-button {
+    min-width: 150px;
+    width: 80%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+  
+.row-full-width {
+  width: 100%;
+}
+.row-mid-width {
+  width: 50%;
+  margin-left: 20px;
+}
+.center-form {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.blue-bttn {
+    background-color: #003970;
+    color: #fff;
+    border-radius: 20px;
+    width: 30%;
+    height: 40px;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.blue-bttn:hover {
+    cursor: pointer;
+    background-color: #022d55;
+}
+.blue-bttn:disabled {
+    background-color: gray;
+    color: #000;
+}
+
+.seccion-information {
+    color: #022d55;
+    font-weight: bolder;
+    font-size: 12pt;
+    padding-top: 10px;
+}
+
+/* .mat-calendar-body-cell-content mat-focus-indicator mat-calendar-body-selected */

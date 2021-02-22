@@ -1,0 +1,81 @@
+<div class="container">
+
+    <div class="d-flex justify-content-center">
+        <h1 id="title">Ingresar nueva persona.</h1><br>
+    </div>
+    <div class="d-flex justify-content-center">
+        <h3>Recuerde que todos los campos son obligatorios.</h3>
+    </div>
+
+    <div class="d-flex justify-content-center" id="form-add">
+        <form class="center-form" [formGroup]="addForm">
+            <div class="form-row">
+                <mat-form-field class="row-full-width">
+                    <mat-label>Ingrese Nombres*</mat-label>
+                    <input matInput placeholder="Ej. Carlos Andres" value="" formControlName="name">
+                    <mat-error *ngIf="addForm.controls.name.errors?.required">
+                        Campo obligatorio. Ingese un valor.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-row">
+                <mat-form-field class="row-full-width">
+                    <mat-label>Ingrese Apellidos*</mat-label>
+                    <input matInput placeholder="Ej. Pardo Marin" value="" formControlName="sureName">
+                    <mat-error *ngIf="addForm.controls.sureName.errors?.required">
+                        Campo obligatorio. Ingese un valor.
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-row">
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Tipo de documento*</mat-label>
+                    <mat-select formControlName="docType">
+                        <mat-option *ngFor="let option of DOCTYPES" [value]="option.value">
+                            {{option.tipe}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- <div class="col-sm"></div> -->
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Ingrese Número de documento*</mat-label>
+                    <input matInput placeholder="Ej. Pardo Marin" value="" formControlName="docNumber">
+                    <mat-error *ngIf="addForm.controls.docNumber.errors?.required">
+                        Campo obligatorio. Ingese un valor correcto.
+                    </mat-error>
+                    <mat-error *ngIf="addForm.controls.docNumber.errors?.pattern">
+                        Valor ingresado incorrecto.
+                    </mat-error>
+                    <!-- <mat-error *ngIf="addForm.controls.docNumber.errors?.minLength">
+                        Valor ingresado demasiado corto.
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+            <div class="form-row">
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Género*</mat-label>
+                    <mat-select formControlName="gender">
+                        <mat-option *ngFor="let option of GENDER" [value]="option.value">
+                            {{option.tipe}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- <div class="col-sm"></div> -->
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Fecha de nacimiento*</mat-label>
+                    <input matInput [matDatepicker]="picker" readonly="true" 
+                        formControlName="birthDate" [max]="maxDate" [min]= "minDate">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="form-row-button">
+                <!-- <pre>Formulario: {{addForm.valid}}</pre> -->
+                <button class="blue-bttn" [disabled] = "addForm.invalid || fullProcess" (click) = "createPerson()">Agregar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

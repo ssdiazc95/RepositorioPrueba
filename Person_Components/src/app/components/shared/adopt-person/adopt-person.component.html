@@ -1,0 +1,102 @@
+<div class="container">
+
+    <div class="d-flex justify-content-center">
+        <h1 id="title">Formulario de Adopción.</h1><br>
+    </div>
+    <div class="d-flex justify-content-center">
+        <h3>Recuerde que todos los campos son obligatorios.</h3>
+    </div>
+
+    <div class="d-flex justify-content-center" id="form-add">
+        <form class="center-form" [formGroup]="adoptForm">
+            <div class="form-row">
+                <label class="seccion-information" for="">Datos de la madre</label>
+            </div>
+            <div class="form-row">
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Tipo de documento*</mat-label>
+                    <mat-select formControlName="docTypeMother">
+                        <mat-option *ngFor="let option of DOCTYPES" [value]="option.value">
+                            {{option.tipe}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- <div class="col-sm"></div> -->
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Ingrese Número de documento *</mat-label>
+                    <input matInput placeholder="Ej. Pardo Marin" value="" formControlName="docNumberMother">
+                    <mat-error *ngIf="adoptForm.controls.docNumberMother.errors?.required">
+                        Campo obligatorio. Ingese un valor correcto.
+                    </mat-error>
+                    <mat-error *ngIf="adoptForm.controls.docNumberMother.errors?.pattern">
+                        Valor ingresado incorrecto.
+                    </mat-error>
+                    <!-- <mat-error *ngIf="adoptForm.controls.docNumber.errors?.minLength">
+                        Valor ingresado demasiado corto.
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+            <div class="form-row">
+                <label for="" class="seccion-information">Datos del padre</label>
+            </div>
+            <div class="form-row">
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Tipo de documento*</mat-label>
+                    <mat-select formControlName="docTypeFather">
+                        <mat-option *ngFor="let option of DOCTYPES" [value]="option.value">
+                            {{option.tipe}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- <div class="col-sm"></div> -->
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Ingrese Número de documento *</mat-label>
+                    <input matInput placeholder="Ej. Pardo Marin" value="" formControlName="docNumberFather">
+                    <mat-error *ngIf="adoptForm.controls.docNumberFather.errors?.required">
+                        Campo obligatorio. Ingese un valor correcto.
+                    </mat-error>
+                    <mat-error *ngIf="adoptForm.controls.docNumberFather.errors?.pattern">
+                        Valor ingresado incorrecto.
+                    </mat-error>
+                    <!-- <mat-error *ngIf="adoptForm.controls.docNumber.errors?.minLength">
+                        Valor ingresado demasiado corto.
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+            <div class="form-row">
+                <label for="" class="seccion-information">Datos del adoptado</label>
+            </div>
+            <div class="form-row">
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Tipo de documento*</mat-label>
+                    <mat-select formControlName="docTypePerson">
+                        <mat-option *ngFor="let option of DOCTYPES" [value]="option.value">
+                            {{option.tipe}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <!-- <div class="col-sm"></div> -->
+                <mat-form-field class="mid-full-width col-sm">
+                    <mat-label>Ingrese Número de documento *</mat-label>
+                    <input matInput placeholder="Ej. Pardo Marin" value="" formControlName="docNumberPerson">
+                    <mat-error *ngIf="adoptForm.controls.docNumberPerson.errors?.required">
+                        Campo obligatorio. Ingese un valor correcto.
+                    </mat-error>
+                    <mat-error *ngIf="adoptForm.controls.docNumberPerson.errors?.pattern">
+                        Valor ingresado incorrecto.
+                    </mat-error>
+                    <!-- <mat-error *ngIf="adoptForm.controls.docNumber.errors?.minLength">
+                        Valor ingresado demasiado corto.
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+            <div class="form-row-button">
+                <!-- <pre>Formulario: {{adoptForm.valid}}</pre> -->
+                <button class="blue-bttn" [disabled] = "adoptForm.invalid || fullProcess" (click) = "AdoptPerson()">Agregar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

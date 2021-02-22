@@ -1,0 +1,10 @@
+<div class="toolbar">
+    <img alt=""
+      src="https://www.bancodebogota.com/wps/wcm/connect/banco-de-bogota/b0fffe7f-7ceb-437e-8d3d-230a8c9d5c91/logo-bogota-interno.png?MOD=AJPERES&CACHEID=b0fffe7f-7ceb-437e-8d3d-230a8c9d5c91"
+    />
+    <div class="menu">
+        <ul class="options">
+            <li class="option" *ngFor= "let option of OPTIONS" [routerLink] = "option.route">{{option.label}}</li>
+        </ul>
+    </div>
+  </div>
